@@ -39,11 +39,11 @@
 - debug:
     msg: "Manage network: {{ manage_network }}"
 
-- name: Disable dhcpcd
-  command: systemctl disable dhcpcd
-  when:
-    - ansible_distribution_major_version|int >= 9
-    - manage_network|bool == true
+#- name: Disable dhcpcd
+#  command: systemctl disable dhcpcd
+#  when:
+#    - ansible_distribution_major_version|int >= 9
+#    - manage_network|bool == true
 
 - name: Activate NetworkManager
   command: systemctl enable NetworkManager

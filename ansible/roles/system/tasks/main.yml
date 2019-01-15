@@ -151,11 +151,11 @@
     - libffi-dev
     - libssl-dev
     - matchbox
-    - omxplayer
+#    - omxplayer
     - python-dev
     - python-netifaces
     - python-simplejson
-    - rpi-update
+#    - rpi-update
     - sqlite3
     - systemd
     - uzbl

@@ -91,7 +91,16 @@ curl -s https://bootstrap.pypa.io/get-pip.py | sudo python
 
 sudo pip install ansible==2.6.3
 
-ansible localhost -m git -a "repo=${1:-https://github.com/screenly/screenly-ose.git} dest=/home/pi/screenly version=$BRANCH"
+# Set up ansible git repo
+ansible localhost -m git -a "repo=${1:-https://github.com/lassens/screenly-ose.git} dest=/home/pi/screenly version=$BRANCH"
+
+# Make some changes for the setup scripts
+sudo mkdir /etc/berryboot/
+sudo chmod 0777 /etc/berryboot/
+sudo chmod -x /etc/berryboot
+sudo touch /boot/config.txt
+
+# Change dir
 cd /home/pi/screenly/ansible
 
 ansible-playbook site.yml $EXTRA_ARGS
