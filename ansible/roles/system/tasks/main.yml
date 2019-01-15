@@ -155,7 +155,7 @@
     - python-dev
     - python-netifaces
     - python-simplejson
-    - rpi-update
+ #   - rpi-update
     - sqlite3
     - systemd
     - uzbl

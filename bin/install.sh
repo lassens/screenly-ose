@@ -98,6 +98,7 @@ ansible localhost -m git -a "repo=${1:-https://github.com/lassens/screenly-ose.g
 sudo mkdir /etc/berryboot/
 sudo chmod 0777 /etc/berryboot/
 sudo chmod -x /etc/berryboot
+sudo touch /boot/config.txt
 
 # Change dir
 cd /home/pi/screenly/ansible
