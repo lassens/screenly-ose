@@ -176,7 +176,7 @@
     - libssl-dev
     - python-dev
     - python-netifaces
-    - rpi-update
+#    - rpi-update
     - systemd
 
 - name: Remove deprecated apt dependencies
@@ -188,10 +188,10 @@
     - lightdm
     - lightdm-gtk-greeter
     - matchbox
-    - omxplayer
+#    - omxplayer
     - sqlite3
     - supervisor
-    - uzbl
+#    - uzbl
     - x11-xserver-utils
     - xserver-xorg
 
