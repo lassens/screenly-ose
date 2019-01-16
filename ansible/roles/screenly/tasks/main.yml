@@ -84,9 +84,9 @@
     state: absent
   with_items: "{{ screenly_systemd_units }}"
 
-- name: Check /proc/device-tree/model file
-  command: cat /proc/device-tree/model
-  register: model_file
+- # name: Check /proc/device-tree/model file
+  # command: cat /proc/device-tree/model
+  # register: model_file
 
 - debug:
     msg: "Device type: {{ device_type }}"
