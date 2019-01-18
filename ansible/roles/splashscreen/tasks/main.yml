@@ -69,3 +69,13 @@
     src: plymouthd.default
     dest: /usr/share/plymouth/plymouthd.default
   when: ansible_distribution_major_version|int > 7
+
+  # GRUB Splash screen
+
+- name: Copies in grub splash screen
+  copy:
+    src: desktop-grub.png
+    dest: /usr/share/images/desktop-base/desktop-grub.png
+
+- name: Update grub
+  command: update-grub
