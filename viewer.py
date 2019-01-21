@@ -279,6 +279,8 @@ def check_update():
     False if no update needed and None if unable to check.
     """
 
+    return None;
+
     sha_file = path.join(settings.get_configdir(), 'latest_screenly_sha')
     device_id_file = path.join(settings.get_configdir(), 'device_id')
 
