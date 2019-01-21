@@ -392,7 +392,7 @@ def setup():
 def main():
     setup()
 
-    if not path.isfile(HOME + INITIALIZED_FILE) and not gateways().get('default'):
+    if not path.isfile(HOME + INITIALIZED_FILE) and not gateways().get('default') and not settings['enable_offline_mode']:
         url = 'http://{0}/hotspot'.format(LISTEN)
         view_webpage(url)
 
