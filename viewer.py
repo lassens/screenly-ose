@@ -347,7 +347,6 @@ def check_update():
     Return True if up to date was written to disk,
     False if no update needed and None if unable to check.
     """
-
     sha_file = path.join(settings.get_configdir(), 'latest_screenly_sha')
     device_id_file = path.join(settings.get_configdir(), 'device_id')
 
@@ -470,7 +469,7 @@ def setup():
 def main():
     setup()
 
-    if not path.isfile(HOME + INITIALIZED_FILE) and not gateways().get('default'):
+    if not path.isfile(HOME + INITIALIZED_FILE) and not gateways().get('default') and not settings['enable_offline_mode']:
         url = 'http://{0}/hotspot'.format(LISTEN)
         load_browser(url=url)
 

@@ -175,6 +175,24 @@
                 </div>
 
                 <div class="form-group row">
+                    <label class="col-2 col-form-label">Enable offline mode</label>
+                    <div class="col-3">
+                      <label id="enable_offline_mode" class="checkbox toggle card card-body bg-light">
+                        {% if context.enable_offline_mode %}
+                          <input name="enable_offline_mode" checked="checked" type="checkbox" />
+                        {% else %}
+                          <input name="enable_offline_mode" type="checkbox" />
+                        {% endif %}
+                        <p>
+                          <span class="on">On</span>
+                          <span class="off">Off</span>
+                        </p>
+                        <a class="btn btn-primary slide-button"></a>
+                      </label>
+                    </div>
+                  </div>
+
+                <div class="form-group row">
                     <label class="col-2 col-form-label">Debug logging</label>
                     <div class="col-3">
                         <label id="debug_checkbox" class="checkbox toggle card card-body bg-light">
