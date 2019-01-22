@@ -178,6 +178,7 @@
     - python-netifaces
 #    - rpi-update
     - systemd
+    - wpagui
 
 - name: Remove deprecated apt dependencies
   apt:
