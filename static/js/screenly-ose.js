@@ -777,8 +777,26 @@
       'change .is_enabled-toggle input': 'toggleIsEnabled',
       'click .download-asset-button': 'download',
       'click .edit-asset-button': 'edit',
-      'click .delete-asset-button': 'showPopover'
+      'click .delete-asset-button': 'showPopover', 
+      'click .fa-image' : 'previewImage', 
+      'click .asset_item_name' : 'previewImage'
     };
+
+    AssetRowView.prototype.previewImage = function() {
+      var r;
+      r = $.get('/api/v1/assets/' + this.model.id + '/content').success(function(result) {
+        if (result['type'] === 'file') {
+          ($('.modal-dialog')).attr('style', 'max-width: ' + ($(window).width() - 300) + 'px');
+          ($('.modal-body')).attr('style', 'max-height: 1080px !important');
+          ($('.imagepreview')).attr('src', 'data:image/png;base64, ' + result['content']);
+          ($('.imagepreview')).attr('height', '100%');
+          ($('.imagepreview')).attr('width', '100%');
+          ($('#imagemodal')).modal('show');
+        }
+        return true;
+      });
+      return false;
+    }
 
     AssetRowView.prototype.toggleIsEnabled = function(e) {
       var save, val;
