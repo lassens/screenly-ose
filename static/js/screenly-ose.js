@@ -886,7 +886,8 @@
       'click .download-asset-button': 'download',
       'click .edit-asset-button': 'edit',
       'click .delete-asset-button': 'showPopover',
-      'click .fa-image' : 'previewImage'
+      'click .fa-image' : 'previewImage', 
+      'click .asset_item_name' : 'previewImage'
     };
 
     AssetRowView.prototype.previewImage = function() {
