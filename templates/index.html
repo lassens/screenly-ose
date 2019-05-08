@@ -73,9 +73,9 @@
 
     <script id="asset-row-template" type="text/template">
         <td class="asset_row_name">
-            <img src="static/img/drag-handle.png"/>
-            <i class="asset-icon"></i>
-            <%= name %>
+            <img src="static/img/drag-handle.png" title="Drag to reorder" alt="Drag to reorder"/>
+            <i class="asset-icon" title="Click for image preview"></i>
+            <span class="asset_item_name" title="Click for image preview"><%= name %></span>
         </td>
         <td style="width:21%">
             <%= start_date %>
