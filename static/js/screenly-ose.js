@@ -511,7 +511,9 @@
       (this.$('input.time')).timepicker({
         minuteStep: 5,
         showInputs: true,
-        disableFocus: true,
+        disableFocus: true, 
+        //template: dropdown, 
+        explicitMode: true, 
         showMeridian: date_settings.show_meridian
       });
       (this.$('input[name="nocache"]')).prop('checked', this.model.get('nocache'));
@@ -558,7 +560,7 @@
           format: date_settings.datepicker_format
         });
         (this.$f(which + "_date_date")).datepicker('setValue', d.date());
-        this.$fv(which + "_date_time", d.time());
+        //this.$fv(which + "_date_time", d.time());
       }
       this.displayAdvanced();
       this.delegateEvents();
