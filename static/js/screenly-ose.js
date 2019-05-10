@@ -559,12 +559,12 @@
       (this.$el.children(":first")).modal();
       this.model.backup();
       this.model.bind('change', this.render);
-      this.render();
+      this.render(true);
       this.validate();
       return false;
     };
 
-    EditAssetView.prototype.render = function() {
+    EditAssetView.prototype.render = function(fromInit = false) {
       var d, f, field, k, l, len, len1, len2, m, ref, ref1, ref2, which;
       this.undelegateEvents();
       ref = 'mimetype uri file_upload'.split(' ');
@@ -599,7 +599,7 @@
           format: date_settings.datepicker_format
         });
         (this.$f(which + "_date_date")).datepicker('setValue', d.date());
-        //this.$fv(which + "_date_time", d.time());
+        if(fromInit) this.$fv(which + "_date_time", d.time());
       }
       this.displayAdvanced();
       this.delegateEvents();
