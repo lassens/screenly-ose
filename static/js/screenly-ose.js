@@ -257,8 +257,8 @@
       (this.$el.children(":first")).modal();
       (this.$('.cancel')).val('Back to Assets');
       deadlines = {
-        start: now(),
-        end: (moment().add('days', 30)).toDate()
+        start: (moment().hour(0).minute(0).second(0)),
+        end: ((moment().add('days', 30)).hour(23).minute(59).second(59)).toDate()
       };
       for (tag in deadlines) {
         if (!hasProp.call(deadlines, tag)) continue;
