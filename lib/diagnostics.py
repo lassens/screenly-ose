@@ -192,6 +192,8 @@ def get_raspberry_code():
     matches = re.findall(r'\:(.*)', sh.grep('Revision', '/proc/cpuinfo').stdout)
     if matches:
         return matches[0].strip()
+    else
+        return "LassensChrome1"
 
 
 def get_raspberry_model():
@@ -217,7 +219,8 @@ def get_raspberry_model():
         'a32082': 'Model 3B',
         'a52082': 'Model 3B',
         'a020d3': 'Model 3B+',
-        '9020e0': 'Model 3A+'
+        '9020e0': 'Model 3A+',
+        'LassensChrome1': 'Lassens Chromebox v1'
     }
     return models.get(get_raspberry_code())
 
@@ -245,7 +248,8 @@ def get_raspberry_revision():
         'a32082': '1.2',
         'a52082': '1.2',
         'a020d3': '1.3',
-        '9020e0': '1.0'
+        '9020e0': '1.0',
+        'LassensChrome1': '1.1'
     }
     return revisions.get(get_raspberry_code())
 
@@ -273,7 +277,8 @@ def get_raspberry_ram():
         'a32082': '1 GB',
         'a52082': '1 GB',
         'a020d3': '1 GB',
-        '9020e0': '512 MB'
+        '9020e0': '512 MB',
+        'LassensChrome1': '2 GB'
     }
     return rams.get(get_raspberry_code())
 
@@ -301,7 +306,8 @@ def get_raspberry_manufacturer():
         'a32082': 'Sony Japan',
         'a52082': 'Stadium',
         'a020d3': 'Sony UK',
-        '9020e0': 'Sony UK'
+        '9020e0': 'Sony UK',
+        'LassensChrome1': 'Asus'
     }
     return manufacturers.get(get_raspberry_code())
 
