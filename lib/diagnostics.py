@@ -192,7 +192,7 @@ def get_raspberry_code():
     matches = re.findall(r'\:(.*)', sh.grep('Revision', '/proc/cpuinfo').stdout)
     if matches:
         return matches[0].strip()
-    else
+    else:
         return "LassensChrome1"
 
 
